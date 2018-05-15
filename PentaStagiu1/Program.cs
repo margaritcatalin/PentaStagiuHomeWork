@@ -17,25 +17,25 @@ namespace PentaStagiu1
         {
             Random rand = new Random();
             int randomNumber = rand.Next(0, 100);
-            string choiseNumber;
+            int choiseNumber=-1;
             do
             {
                 Console.WriteLine("Introduceti numarul :");
-                choiseNumber = Console.ReadLine();
-                if (int.Parse(choiseNumber) == randomNumber)
+                choiseNumber = int.Parse(Console.ReadLine());
+                if (choiseNumber == randomNumber)
                 {
                     Console.WriteLine("Felicitari! Ai ghicit numarul.");
 
                 }
-                else if (int.Parse(choiseNumber) < randomNumber)
+                else if (choiseNumber < randomNumber)
                 {
-                    Console.WriteLine($"{int.Parse(choiseNumber)} este mai mic decat cel ales random.");
+                    Console.WriteLine($"{choiseNumber} este mai mic decat cel ales random.");
                 }
                 else
                 {
-                    Console.WriteLine($"{int.Parse(choiseNumber)} este mai mare decat cel ales random.");
+                    Console.WriteLine($"{choiseNumber} este mai mare decat cel ales random.");
                 }
-            } while (int.Parse(choiseNumber) != randomNumber);
+            } while (choiseNumber != randomNumber);
         }
     }
 }
